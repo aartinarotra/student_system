@@ -1,0 +1,87 @@
+{% load static %}
+<h1>HOME PAGE</h1>
+
+<div class="navbar">
+
+<a href="{% url 'home' %}">Home</a>
+
+<a href="{% url 'student_list' %}">Student List</a>
+
+<a href="{% url 'add_student' %}">Add Student</a>
+
+<a href="{% url 'java_course' %}">Java</a>
+
+<a href="{% url 'python_course' %}">Python</a>
+
+<a href="{% url 'php_course' %}">PHP</a>
+
+<a href="{% url 'datascience_course' %}">Data Science</a>
+
+</div>
+<style>
+
+.navbar{
+background:black;
+padding:15px;
+}
+
+.navbar a{
+color:white;
+margin-right:20px;
+text-decoration:none;
+font-size:18px;
+}
+</style>
+
+
+<div class="course">
+<h2>Java</h2>
+<p>
+Java is a popular programming language used for building web applications, Android applications, and enterprise software. 
+It follows object-oriented programming concepts which help developers create reusable and secure code. 
+Java is widely used by large companies because it is reliable, scalable, and platform independent.
+</p>
+<a href="{%url 'java_course'%}"> 
+<button>View Course</button>
+</a>
+</div>
+
+<div class="course">
+<h2>Python</h2>
+<p>
+Python is one of the most beginner-friendly programming languages. 
+It is widely used in web development, automation, artificial intelligence, machine learning, and data analysis. 
+Python has a simple and readable syntax which makes it easy to learn and very powerful for building different types of applications.
+</p>
+<a href="{%url 'python_course'%}">
+<button>View Course</button>
+</a>
+</div>
+
+<div class="course">
+<h2>PHP</h2>
+<p>
+PHP is a server-side scripting language mainly used for web development. 
+It is commonly used to build dynamic websites and connect web applications with databases. 
+Many popular websites and content management systems like WordPress are built using PHP.
+</p>
+<a href="{% url 'php_course' %}">
+<button>View Course</button>
+</a>
+</div>
+
+<div class="course">
+<h2>Data Science</h2>
+<p>
+Data Science is a field that focuses on analyzing and interpreting large amounts of data. 
+It combines programming, statistics, and machine learning to extract meaningful insights from data. 
+Tools like Python, Pandas, NumPy, and visualization libraries are commonly used in data science projects.
+</p>
+
+<a href="{% url 'datascience_course' %}">
+<button>View Course</button>
+</a>
+</div>
+
+
+<image src="{% static 'student/images/picture.WEBP'%}" width="500",height="500">
