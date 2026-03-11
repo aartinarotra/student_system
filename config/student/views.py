@@ -71,3 +71,4 @@ class StudentViewSet(ModelViewSet):
     queryset = Student.objects.all()
     serializer_class = Studentserializer
     pagination_class =  mypagination 
+    
