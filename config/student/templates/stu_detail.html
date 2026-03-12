@@ -14,6 +14,7 @@
 
 <h2>Student List</h2>
 <form method="GET">
+search by name: <input type="text" name="name" value="{{ request.GET.name }}">
 
 <select name="course">
 
@@ -28,6 +29,8 @@
 <option value="data science">Data Science</option>
 
 </select>
+
+
 
 <button type="submit">Filter</button>
 

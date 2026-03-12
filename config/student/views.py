@@ -35,12 +35,16 @@ def edit_student(request,pk):
         return render(request,"stu_update.html",{'form':form})
     
 def student_list(request):
+    students = Student.objects.all()
+    #filter by course
+    course_query = request.GET.get('course')   # URL se course value lega
+    if course_query:
+        students = Student.objects.filter(course=course_query)
     
-    course = request.GET.get('course')   # URL se course value lega
-    if course:
-        students = Student.objects.filter(course=course)
-    else:
-        students = Student.objects.all()
+    name_query=request.GET.get('name')
+    if name_query:
+        students=Student.objects.filter(name=name_query)
+            
     paginator=Paginator(students,5,orphans=1)
     pagenumber=request.GET.get('page')
     page_obj=paginator.get_page(pagenumber)
